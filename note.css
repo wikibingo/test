@@ -1,0 +1,174 @@
+
+#-------------------button--------------------
+<button class="new_note general_button" type="button">New Note</button>
+<button class="dark_theme general_button" type="button">Dark Theme</button>
+<button onclick="alert('Hello!')">Click Me!</button>
+
+#-------------------text placeholder--------------------
+<div>
+<textarea placeholder="This is a placeholder" rows="7"></textarea>
+</div>
+
+#-----------------img with link----------------------
+<a class="footer_logo_item" href="https://www.bcit.ca"><img src="img/229101.png"
+    title="Linkedin Learning Hub" width="51" height="51"></a>
+
+
+#style-------------------------------------------------------------------------------
+list-style-type: none;
+list-style-type: square;
+list-style-type: circle;
+
+border-radius: 4px;
+#dashedline {
+    border-top: 6px dashed black;
+}
+.para1 {
+    background: #EAD7D7;
+    position: sticky;???
+    top: 0;
+    width: 100%;
+}
+
+.para2 p + p{
+    clear: both;
+}
+
+.para2 img{
+    float: right;
+  }
+
+
+display: inline
+display: inline-block
+display: block;
+div element block-level
+
+flexbox
+flex or inline-flex(fit container) on the parent container
+    flex-direction:row (main axis is row, cross axis is column)
+    flex-direction:column(main axis is column,cross axis is row)
+    flex-wrap:wrap; set on container
+
+
+    justify-content: (align items on the main axis,defalut is flex-start )
+    align-items: (align items on the cross axis default value: stretch(filled out container))
+
+
+
+    sizing properties set on flex items
+        flex-basis:;
+        flex-grow:;
+        flex-shrink:;
+        example:  
+            flex-basis: 200px;
+            flex-grow: 1;
+            order: 2;
+        flex(shorthand):grow shrink basis
+        example: flex:1 0 100%
+                    : 1 1 auto
+
+#---------------------------------------------------------------------
+the following use in container
+    grid-template-columns:1fr 1fr (used in container)
+    grid-template-rows: 100px;
+    implicit grids:
+        grid-auto-columns: 200px;
+        grid-auto-rows: 200px;
+    gap: 5px;
+
+grid placement(set on grid items directly)
+    grid-column:1/-1;
+    grid-row: 1 / 2;
+
+box-sizing:content-box
+box-sizing:border-box
+# remove bottom line from the last element
+.course:last-child {
+    border-bottom: none;
+  }
+
+css grid explain:
+    https://learning.oreilly.com/library/view/modern-css-master/9781484262948/html/502345_1_En_12_Chapter.xhtml
+
+###------------------------------------------------------------------------------------------------------------------------
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+#mobile first
+    body{
+        /*default styles here,
+            targets mobile first */
+    }
+
+    @media screen and (min-width:480px){
+        /*style changes when the screen gets larger */
+    }
+#desktop first
+    body{
+        /*default styles here,
+            targets desktop first */
+    }
+
+    @media screen and (max-width:800px){
+        /*style changes when the screen gets smaller */
+    }
+
+
+Media queries allow CSS rules to be applied conditionally.
+
+A breakpoint is a threshold used in a media query, where there is a layout change.
+    
+An element’s font size can be proportional to the width of the viewport and limited by using the clamp function.
+    font-size: clamp(48px, 4.8vw, 64px);
+    for a 1,000-pixel-wide viewport, 1vw is equal to 10px
+    vw unit, which is equal to 1% of the viewport width. 
+
+Sometimes, only minor changes are needed inside a media query, such as setting flex-wrap to wrap or the flex-direction from row to column in a flex container.
+    
+Images can automatically resize to the viewport by setting max-width to 100% and height to auto.
+###------------------------------------------------------------------------------------------------------------------------------------
+JavaScripts:
+console.log(`The two numbers are NOT ${result}!`);
+The data type of undefined is undefined. Whereas the type of null is object
+    typeof undefined; // "undefined" 
+    typeof null; //"object"
+
+undefined when used in an arithmetic operation will result in NaN(Not a Number). 
+Whereas null is converted to 0 behind the scenes.
+    undefined + 1; // NaN 
+    null + 1; // 1
+
+Automatic Type Conversion
+    console.log("5" - 1)    //4
+    console.log("5" + 1)    //51
+    console.log("five" * 2)    //NaN
+    console.log(false == 0)    //true
+
+== and != only compares the values;     #equality operator 
+=== and !== compares both type and value        #strict equality operator 
+
+
+undefined == null; //true   #compares only the values. Both of undefined and null are falsy by default
+undefined === null; //false #the type of undefined and null are different
+
+Both are falsy values by the way. When used in conditional logic both will return false.
+
+    !!undefined; //false 
+    !!null; //false   
+#Here, I am using the JavaScript double negation (!!) or the Bang Bang operator to check the Boolean equivalent of a value.
+
+
+
+
+When comparing a string with a number, JavaScript will convert the string to a number when doing  the comparison:
+    An empty string converts to 0.
+    A non-numeric string converts to NaN which is always false.
+        example: console.log(2 < "12")    //true
+                console.log(2 < "John")    //false
+                console.log(2 > "John")    //false
+                console.log(2 == "John")    //false
+                console.log("2" > "12")    //true
+
+
+******
+git push --set-upstream origin assignment2(if origin exist but The current branch assignment2 has no upstream branch.)
